@@ -1,4 +1,7 @@
 # Math589BAssignment1
-Protein Folding
+This is a course assignment, the purpose is purely educational.
+The topic is Protein Folding
+## Lennart-Jones Potential
+![alt text](https://github.com/ArizonaMath/Math589BAssignment1/blob/master/lennart_joines_potential.png?raw=true)
 ## Report ##
 Write your report here in GitHub Markdown format.
