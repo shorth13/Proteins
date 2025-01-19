@@ -123,7 +123,7 @@ def animate_optimization(trajectory, interval=100):
 
 # Main function
 if __name__ == "__main__":
-    n_beads = 40
+    n_beads = 10
     dimension = 3
     initial_positions = initialize_protein(n_beads, dimension)
     
