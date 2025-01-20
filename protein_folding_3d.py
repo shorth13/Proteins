@@ -35,19 +35,19 @@ def total_energy(positions, n_beads, epsilon=1.0, sigma=1.0, b=1.0, k_b=100.0):
     """
     positions = positions.reshape((n_beads, -1))
     energy = 0.0
-    
+
     # Bond energy
     for i in range(n_beads - 1):
         r = np.linalg.norm(positions[i+1] - positions[i])
         energy += bond_potential(r, b, k_b)
-    
+
     # Lennard-Jones potential for non-bonded interactions
     for i in range(n_beads):
         for j in range(i+1, n_beads):
             r = np.linalg.norm(positions[i] - positions[j])
             if r > 1e-2:  # Avoid division by zero
                 energy += lennard_jones_potential(r, epsilon, sigma)
-    
+
     return energy
 
 # Optimization function
@@ -101,23 +101,23 @@ def animate_optimization(trajectory, interval=100):
     """
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
-    
+
     line, = ax.plot([], [], [], '-o', markersize=6)
 
     def update(frame):
         positions = trajectory[frame]
         line.set_data(positions[:, 0], positions[:, 1])
         line.set_3d_properties(positions[:, 2])
-        
+
         # Autoscale the axes
         x_min, x_max = positions[:, 0].min(), positions[:, 0].max()
         y_min, y_max = positions[:, 1].min(), positions[:, 1].max()
         z_min, z_max = positions[:, 2].min(), positions[:, 2].max()
-        
+
         ax.set_xlim(x_min - 1, x_max + 1)
         ax.set_ylim(y_min - 1, y_max + 1)
         ax.set_zlim(z_min - 1, z_max + 1)
-        
+
         ax.set_title(f"Step {frame + 1}/{len(trajectory)}")
         return line,
 
@@ -131,15 +131,15 @@ if __name__ == "__main__":
     n_beads = 10
     dimension = 3
     initial_positions = initialize_protein(n_beads, dimension)
-    
+
     print("Initial Energy:", total_energy(initial_positions.flatten(), n_beads))
     plot_protein_3d(initial_positions, title="Initial Configuration")
-    
+
     result, trajectory = optimize_protein(initial_positions, n_beads, write_csv = True)
-    
+
     optimized_positions = result.x.reshape((n_beads, dimension))
     print("Optimized Energy:", total_energy(optimized_positions.flatten(), n_beads))
     plot_protein_3d(optimized_positions, title="Optimized Configuration")
-    
+
     # Animate the optimization process
     animate_optimization(trajectory)
