@@ -73,7 +73,7 @@ def optimize_protein(positions, n_beads, write_csv=False):
     if write_csv:
         csv_filepath = f'protein{n_beads}.csv'
         np.savetxt(csv_filepath, trajectory[-1], delimiter=",")
-        
+
     return result, trajectory
 
 # 3D visualization function
