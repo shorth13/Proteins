@@ -1,6 +1,7 @@
 #ifndef ENERGY_HPP
 #define ENERGY_HPP
 
+
 extern "C" {
 
   double lennard_jones_potential(double r, double epsilon, double sigma);
