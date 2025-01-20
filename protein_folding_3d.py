@@ -51,7 +51,7 @@ def total_energy(positions, n_beads, epsilon=1.0, sigma=1.0, b=1.0, k_b=100.0):
     return energy
 
 # Optimization function
-def optimize_protein(positions, n_beads):
+def optimize_protein(positions, n_beads, write_csv=False):
     """
     Optimize the positions of the protein to minimize total energy.
     """
@@ -70,6 +70,10 @@ def optimize_protein(positions, n_beads):
         callback=callback,
         options={'disp': True}
     )
+    if write_csv:
+        csv_filepath=f'protein{n_beads}.csv'
+        np.savetxt(csv_filepath, trajectory[-1], delimiter=",")
+        
     return result, trajectory
 
 # 3D visualization function
@@ -138,5 +142,3 @@ if __name__ == "__main__":
     
     # Animate the optimization process
     animate_optimization(trajectory)
-    csv_filepath=f'protein{n_beads}.csv'
-    np.savetxt(csv_filepath, trajectory[-1], delimiter=",")
