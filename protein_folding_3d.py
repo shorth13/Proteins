@@ -135,7 +135,7 @@ if __name__ == "__main__":
     print("Initial Energy:", total_energy(initial_positions.flatten(), n_beads))
     plot_protein_3d(initial_positions, title="Initial Configuration")
     
-    result, trajectory = optimize_protein(initial_positions, n_beads)
+    result, trajectory = optimize_protein(initial_positions, n_beads, write_csv = True)
     
     optimized_positions = result.x.reshape((n_beads, dimension))
     print("Optimized Energy:", total_energy(optimized_positions.flatten(), n_beads))
