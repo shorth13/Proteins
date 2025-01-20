@@ -138,3 +138,5 @@ if __name__ == "__main__":
     
     # Animate the optimization process
     animate_optimization(trajectory)
+    csv_filepath=f'protein{n_beads}.csv'
+    np.savetxt(csv_filepath, trajectory[-1], delimiter=",")
