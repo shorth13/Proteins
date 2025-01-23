@@ -14,7 +14,7 @@
 #include <string.h>
 #include <assert.h>
 
-#include "energy.h"
+#include "energy.hpp"
 
 double epsilon = 1;
 double sigma = 1;
