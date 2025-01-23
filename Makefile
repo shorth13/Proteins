@@ -1,7 +1,11 @@
 CXX = g++
 CXXFLAGS = -Wall -ggdb3 -O5
-energy.so: energy.cpp energy.hpp
-	$(CXX) $(CXXFLAGS) -shared -o energy.so -fPIC energy.cpp
+libenergy.so: energy.cpp energy.hpp
+	$(CXX) $(CXXFLAGS) -shared -o libenergy.so -fPIC energy.cpp
+
+grad_w_armijo: libenergy.so grad_w_armijo.o 
+	$(CXX) $(CXXFLAGS) grad_w_armijo.o -o grad_w_armijo  $(LDFLAGS) -lenergy
+
 
 clean: FORCE
 	rm energy.so
