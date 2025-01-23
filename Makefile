@@ -11,6 +11,7 @@ grad_w_armijo: libenergy.so grad_w_armijo.o
 
 
 clean: FORCE
-	rm energy.so
+	@-rm libenergy.so
+	@-rm grad_w_armijo
 
 FORCE:
