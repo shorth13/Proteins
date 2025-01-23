@@ -1,5 +1,6 @@
 CXX = g++
 CXXFLAGS = -Wall -ggdb3 -O5
+LDFLAGS = -L. 
 
 all: libenergy.so grad_w_armijo
 
