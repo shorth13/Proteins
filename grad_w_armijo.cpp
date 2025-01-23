@@ -21,6 +21,24 @@ double sigma = 1;
 double b = 1;
 double k_b = 100;
 
+double *initialize_protein(int n_beads, int dimension, double **grad)
+{
+  // Initialize a protein with `n_beads` arranged linearly in
+  // `dimension`-dimensional space.
+  size_t sz = n_beads * dimension;
+  double *x = (double *)calloc(sz, sizeof(double));
+  *grad = (double *)calloc(sz, sizeof(double));  
+  assert(x);
+
+  for(int  i = 0; i < n_beads - 1; ++i) {
+    int idx1 = i * dimension;
+    int idx2 = (i + 1) * dimension;
+    x[idx2] = x[idx1] + 1;  // Fixed bond length of 1 unit
+  }
+  return x;
+}
+
+
 double dot(double *x, double *y, int n)
 {
   double dot_val = 0;
