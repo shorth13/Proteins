@@ -15,6 +15,9 @@
 //
 // NOTE: String Wolfe conditions, in contrast, may not work because
 // our function is not convex.
+//
+// NOTE: This is NOT a full implementation because the function
+// total energy is a stub only.
 
 
 #include <math.h>
