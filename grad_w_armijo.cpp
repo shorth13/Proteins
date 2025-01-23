@@ -18,6 +18,10 @@
 //
 // NOTE: This is NOT a full implementation because the function
 // total energy is a stub only.
+//
+// The implementation of gradient_method_test is not very elegant
+// and I would never write this code but for educational purposes.
+// It requires little explanation.
 
 
 #include <math.h>
