@@ -36,6 +36,25 @@ double *initialize_protein(int n_beads, int dimension, double **grad)
   return x;
 }
 
+double total_energy(double* x,
+		    double* grad,
+		    int     n_beads,
+		    int     dimension,
+		    double  epsilon,
+		    double  sigma,
+		    double  b,
+		    double  k_b)
+{
+  double energy = 0.0;
+  size_t sz = n_beads * dimension;
+  bzero(grad, sz * sizeof(double));
+
+  // Compute energy and its gradient
+
+  return energy;
+}
+
+
 
 double dot(double *x, double *y, int n)
 {
