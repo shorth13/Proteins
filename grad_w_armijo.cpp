@@ -74,7 +74,7 @@ void gradient_method_test(int n_beads, int dimension, int maxit, double tol)
     }
 
     do {
-      // Seaarch Direction
+      // Search Direction
       for(int i = 0; i < n; ++i) {
 	p[i] = -grad[i];
       }    
