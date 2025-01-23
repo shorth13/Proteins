@@ -1,7 +1,7 @@
 CXX = g++
 CXXFLAGS = -Wall -ggdb3 -O5
 
-all: libenergy.so
+all: libenergy.so grad_w_armijo
 
 libenergy.so: energy.cpp energy.hpp
 	$(CXX) $(CXXFLAGS) -shared -o libenergy.so -fPIC energy.cpp
