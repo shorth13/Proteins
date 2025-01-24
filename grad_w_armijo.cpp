@@ -9,11 +9,11 @@
 *----------------------------------------------------------------*/
 // This code can compute the local minimum of energy for 1000 beads
 //
-// The algorithm is not BFGS, but plain gradient with backtracking
+// The algorithm is not BFGS, but plain gradient with backtracking.
 // Backtracking implements the Armijo condition which works well
 // even if function is not convex.
 //
-// NOTE: String Wolfe conditions, in contrast, may not work because
+// NOTE: Strong Wolfe conditions, in contrast, may not work because
 // our function is not convex.
 //
 // NOTE: This is NOT a full implementation because the function
