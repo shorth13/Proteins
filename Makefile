@@ -21,5 +21,7 @@ bfgs_w_varargs: bfgs_w_varargs.o
 clean: FORCE
 	@-rm libenergy.so
 	@-rm grad_w_armijo
+	@-rm grad_w_varargs
+	@-rm grad_w_classes
 
 FORCE:
