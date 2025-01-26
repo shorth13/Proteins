@@ -5,13 +5,16 @@ from mpl_toolkits.mplot3d import Axes3D
 from matplotlib.animation import FuncAnimation
 
 # Initialize protein positions
-def initialize_protein(n_beads, dimension=3):
+def initialize_protein(n_beads, dimension=3, fudge = 1e-5):
     """
-    Initialize a protein with `n_beads` arranged linearly in `dimension`-dimensional space.
+    Initialize a protein with `n_beads` arranged almost linearly in `dimension`-dimensional space.
+    The `fudge` is a factor that, if non-zero, adds a spiral structure to the configuration.
     """
     positions = np.zeros((n_beads, dimension))
     for i in range(1, n_beads):
         positions[i, 0] = positions[i-1, 0] + 1  # Fixed bond length of 1 unit
+        positions[i, 1] = fudge * np.sin(i)  # Fixed bond length of 1 unit
+        positions[i, 2] = fudge * np.sin(i*i)  # Fixed bond length of 1 unit                
     return positions
 
 # Lennard-Jones potential function
