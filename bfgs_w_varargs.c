@@ -7,6 +7,7 @@
 * Copying:  (C) Marek Rychlik, 2020. All rights reserved.
 *
 *----------------------------------------------------------------*/
+/* NOTE: There is a bug in function matrix_update. Can you fix it? */
 /* This file demonstrates two things:
  * 1. An implementation of BFGS in C
  * 2. Using variable arguments in C (like **kwargs in Python)
