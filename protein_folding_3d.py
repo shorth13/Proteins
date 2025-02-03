@@ -71,6 +71,7 @@ def optimize_protein(positions, n_beads, write_csv=False, maxiter=1000, tol=1e-6
         args=(n_beads,),
         method='BFGS',
         callback=callback,
+        tol=tol,
         options={'maxiter': maxiter, 'disp': True}
     )
     if write_csv:
