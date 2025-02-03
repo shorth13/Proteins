@@ -55,8 +55,6 @@ def total_energy(positions, n_beads, epsilon=1.0, sigma=1.0, b=1.0, k_b=100.0):
 
 # Optimization function
 def optimize_protein(positions, n_beads, write_csv=False, maxiter=1000, tol=1e-6):
-
-def optimize_protein(positions, n_beads, write_csv=False):
     """
     Optimize the positions of the protein to minimize total energy.
     """
