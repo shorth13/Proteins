@@ -61,7 +61,7 @@ def optimize_protein(positions, n_beads, write_csv=False, maxiter=1000, tol=1e-6
     Parameters:
     ----------
     positions : np.ndarray
-        A 2D NumPy array of shape (n_beads, d) representing the initial 
+        A 2D NumPy array of shape (n_beads, d) representing the initial
         positions of the protein's beads in d-dimensional space.
 
     n_beads : int
@@ -79,12 +79,12 @@ def optimize_protein(positions, n_beads, write_csv=False, maxiter=1000, tol=1e-6
     Returns:
     -------
     result : scipy.optimize.OptimizeResult
-        The result of the optimization process, containing information 
+        The result of the optimization process, containing information
         such as the optimized positions and convergence status.
 
     trajectory : list of np.ndarray
-        A list of intermediate configurations during the optimization, 
-        where each element is an (n_beads, d) array representing the 
+        A list of intermediate configurations during the optimization,
+        where each element is an (n_beads, d) array representing the
         positions of the beads at that step.
     """
     trajectory = []
